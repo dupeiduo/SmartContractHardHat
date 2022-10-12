@@ -12,10 +12,11 @@ npx hardhat node
 npx hardhat run scripts/deploy.js
 ```
 
-`yarn hardhat compile `
-`yarn hardhat run scripts/deploy.js `
-
-`yarn add --dev dotenv `
+```shell
+yarn hardhat compile
+yarn hardhat run scripts/deploy.js
+yarn add --dev dotenv
+```
 
 add your `.env` file then change your hardhat.config.js
 
