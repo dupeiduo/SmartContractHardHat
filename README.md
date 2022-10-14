@@ -121,3 +121,17 @@ require("./tasks/get-balance")
 ```
 yarn hardhat get-balance
 ``
+
+## console
+
+```yarn hardhat console --network localhost```
+
+```javascript
+const contractFactory = await ethers.getContractFactory("SmartContract")
+const smartContract = await contractFactory.deploy()
+const balance = await smartContract.getMyBalance()
+balance
+```
+output is `BigNumber { value: "0" }`
+
+double `control + c` to exit
