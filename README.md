@@ -141,4 +141,28 @@ double `control + c` to exit
 
 `yarn add hardhat-gas-reporter --dev`
 
+```
+require("hardhat-gas-reporter")
+```
+
 Beauty output of the gas in file `gas-reporter.txt`.
+
+## solidity-coverage
+
+`yarn add solidity-coverage`
+
+```
+require("solidity-coverage")
+```
+
+```shell
+yarn hardhat coverage
+```
+--------------------|----------|----------|----------|----------|----------------|
+File                |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+--------------------|----------|----------|----------|----------|----------------|
+ contracts/         |      100 |      100 |      100 |      100 |                |
+  SmartContract.sol |      100 |      100 |      100 |      100 |                |
+--------------------|----------|----------|----------|----------|----------------|
+All files           |      100 |      100 |      100 |      100 |                |
+--------------------|----------|----------|----------|----------|----------------|
