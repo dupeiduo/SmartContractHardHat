@@ -44,3 +44,55 @@ Deploying...
 deployed success, Address: 0x8eFf7571A93477dd3FB6C73e93EA987Fd90AC349, balance: 0
 ✨  Done in 27.66s.
 ```
+
+## Switch back to localhost Network
+It'll fast for local development.
+Add to `hardhat.config.js` networks
+```javascript
+localhost: {
+    url: "http://127.0.0.1/8545",
+    // accounts: default hardhat accounts
+    chainId: 31337,
+},
+```
+
+`yarn hardhat node`
+
+add new terminal
+
+`yarn hardhat run scripts/deploy.js --network localhost`
+
+We will swith to locahost network
+
+## Test
+Update test/test-deploy.js
+```javascript
+const { ethers } = require("hardhat")
+const { expect, assert } = require("chai")
+describe("SmartContract", function () {
+    let smartContractFactory, smartContract
+    beforeEach(async function () {
+        smartContractFactory = await ethers.getContractFactory("SmartContract")
+        smartContract = await smartContractFactory.deploy()
+    })
+
+    it("Init value", async function () {
+        const currentValue = await smartContract.getMyBalance()
+        const expectValue = "0"
+        assert.equal(currentValue, expectValue)
+    })
+
+    it("Update value", async function () {
+        await smartContract.setMyBalance(88)
+        const currentValue = await smartContract.getMyBalance()
+        const expectValue = "88"
+        assert.equal(currentValue, expectValue)
+    })
+})
+```
+Go to command line paste in 
+
+`yarn hardhat test`
+
+## Task
+
