@@ -1,6 +1,8 @@
 require("@nomicfoundation/hardhat-toolbox")
 require("dotenv").config()
+require("@nomiclabs/hardhat-etherscan")
 require("./tasks/get-balance")
+require("hardhat-gas-reporter")
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
     defaultNetwork: "hardhat",
@@ -17,4 +19,14 @@ module.exports = {
         },
     },
     solidity: "0.8.7",
+    gasReporter: {
+        enabled: true,
+        outputFile: "gas-reporter.txt",
+        noColors: true,
+        currency: "USD",
+        // coinmarketcap:
+    },
+    etherscan: {
+        apiKey: "ETHERSCAN_API_KEY",
+    },
 }

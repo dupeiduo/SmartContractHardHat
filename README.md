@@ -135,3 +135,10 @@ balance
 output is `BigNumber { value: "0" }`
 
 double `control + c` to exit
+
+
+## gas reporter
+
+`yarn add hardhat-gas-reporter --dev`
+
+Beauty output of the gas in file `gas-reporter.txt`.
