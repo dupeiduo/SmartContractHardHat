@@ -1,5 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox")
 require("dotenv").config()
+require("./tasks/get-balance")
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
     defaultNetwork: "hardhat",
