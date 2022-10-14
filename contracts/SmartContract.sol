@@ -2,7 +2,7 @@
 pragma solidity 0.8.7;
 
 contract SmartContract {
-    uint256 public myBalance;
+    uint256 myBalance;
 
     function getMyBalance() public view returns (uint256) {
         return myBalance;

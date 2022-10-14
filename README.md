@@ -38,7 +38,7 @@ module.exports = {
 
 `yarn hardhat run scripts/deploy.js --network georli`
 
-the output here, and we can check it in the [georli](https://goerli.etherscan.io/address/0x77CF15056FE1D08c3B2e4397d39c21e9c16fdf53)
+the output here, and we can check it in the [georli](https://goerli.etherscan.io/address/0x8eFf7571A93477dd3FB6C73e93EA987Fd90AC349)
 
 ```
 Deploying...
@@ -166,3 +166,26 @@ File                |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines
 --------------------|----------|----------|----------|----------|----------------|
 All files           |      100 |      100 |      100 |      100 |                |
 --------------------|----------|----------|----------|----------|----------------|
+
+
+## Verify Contract
+
+```shell
+yarn add @nomiclabs/hardhat-etherscan --dev
+```
+add `require("@nomiclabs/hardhat-etherscan")` to file `hardhat.config.js`
+
+add config
+
+```javascript
+etherscan: {
+    apiKey: process.env.ETHERSCAN_API_KEY,
+},
+```
+add `ETHERSCAN_API_KEY` to .env file.
+How to get the `ETHERSCAN_API_KEY`?
+1. https://etherscan.io/
+2. login
+3. Find `API Keys` menu
+4. click `Add` button and input a Project name
+5. add the api key to your env file

@@ -1,6 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox")
 require("dotenv").config()
-require("@nomiclabs/hardhat-etherscan")
+require("@nomiclabs/hardhat-etherscan") // add devDependencies
 require("./tasks/get-balance")
 require("hardhat-gas-reporter")
 require("solidity-coverage")
@@ -28,6 +28,6 @@ module.exports = {
         // coinmarketcap:
     },
     etherscan: {
-        apiKey: "ETHERSCAN_API_KEY",
+        apiKey: process.env.ETHERSCAN_API_KEY,
     },
 }
