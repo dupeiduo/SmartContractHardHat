@@ -12,12 +12,13 @@ npx hardhat node
 npx hardhat run scripts/deploy.js
 ```
 
-`yarn hardhat compile `
-`yarn hardhat run scripts/deploy.js `
+```shell
+yarn hardhat compile
+yarn hardhat run scripts/deploy.js
+yarn add --dev dotenv
+```
 
-`yarn add --dev dotenv `
-
-change your hardhat.config.js
+add your `.env` file then change your hardhat.config.js
 
 ```js
 require("@nomicfoundation/hardhat-toolbox");
